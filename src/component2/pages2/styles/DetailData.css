@@ -1,0 +1,13 @@
+
+.card{
+    border: 1px solid #FD841F;
+    overflow: hidden;  
+}
+.card-header{
+    background: #FD841F;
+    color: white;
+    align-items: center;
+}
+.card-header h2{
+    text-align: center;
+}
