@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
     //const [otp, setOtp] = React.useState()
     //const [hidden, setHidden] = React.useState('hidden');
     const [params, seParams] = React.useState({ hidden: 'hidden', textButton: "Request OTP", phoneNumber: '', otp: '', textFeedBack : '',feedBackType  : 'invalid', isDisabled : false, colorText : "text-danger"});
-
+    
     ///cek token storage
     const cekToken = window.localStorage.getItem("token");
     // console.log(cekToken);
@@ -128,10 +128,12 @@ const AuthProvider = ({ children }) => {
         window.localStorage.removeItem("token");
     };
     const setLocalToken = (token) => {
-        setToken(token);        
+        setToken(token);
+        console.log('line 132', token);       
     }
     const value = {
-        token,setLocalToken,
+        token,
+        setLocalToken,
         getToken : () => window.localStorage.getItem("token"),
         //textButton,
         //phoneNumber,setPhoneNumber,

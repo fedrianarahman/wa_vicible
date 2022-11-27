@@ -28,18 +28,7 @@ export const Navigation = () => {
       <br></br>
       <br></br>
       <br></br>
-        {/* <nav>
-            <NavLink to="/home2">Home</NavLink>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-            <NavLink to="/admin">Admin</NavLink>
-            <NavLink to="/login2">Loadable Login</NavLink>
-
-            {token && (
-                <button type="button"  onClick={onLogout}>
-                    Sign Out
-                </button>
-            )}
-        </nav> */}
+        
         </>
     );
 };

@@ -15,14 +15,15 @@ const Featured =  () => {
         })
 
         useEffect(()=>{
-
             fetchData();
-        }, []);
+        }, [])
+        
         const fetchData = async () =>{
              // mengambil dan mengecek token dari local storage
-        const cekToken = localStorage.getItem("token");
+        const cekToken = window.localStorage.getItem("token");
         // mendecode token yang di hash 
         const token = decodeToken(cekToken);
+        // console.log('line 26 featured', token);
         // membuat parameter header
          const localConfigAxios = {
         headers: { 
@@ -33,7 +34,8 @@ const Featured =  () => {
         // menembak api
             //  axios.post(`${config.host}/wa/get-user-wa`, token, localConfigAxios)
         // const response = await axios.post(`${config.host}/wa/get-user-wa`, token, localConfigAxios)
-        const response = await ApiService.post(`${config.host}/wa/get-user-wa`,token);
+        const response = await ApiService.post(`/wa/get-user-wa`,token);
+        // console.log('featured jsx line 37', response.data)
         // const response1 = await ApiService.post(`${config.host}/wa/get-state-server`,token)
         // console.log('line 37', response1.data.data);
         // console.log('line 26');
@@ -42,7 +44,7 @@ const Featured =  () => {
 
             // });
         const data = response.data.data.nama;
-        console.log('line 35', data);
+        // console.log('line 35', data);
         
         setData({...datas, nama : response.data.data.nama, phoneNumber : response.data.data.whatsappNumber, saldo : response.data.data.saldoTopup,});
         }

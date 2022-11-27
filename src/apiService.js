@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-
+let config = require('./config.json');
 export const ApiService = {
 
     get : (url, param) =>{
@@ -14,6 +14,6 @@ export const ApiService = {
               },
             }   
 
-        return await axios.post(url,params,localConfigAxios);
+        return await axios.post(config.host+url,params,localConfigAxios);
     },
 }
